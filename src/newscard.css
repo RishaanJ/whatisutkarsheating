@@ -1,0 +1,24 @@
+.newscards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.newscard{
+    margin-top: 20px;
+    width: 500px;
+    border-radius: 20px;
+    padding: 10px 10px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.newscard img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.newscard h1{
+    font-size: 25px;
+}
