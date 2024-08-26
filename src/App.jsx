@@ -1,26 +1,27 @@
 import { useState } from 'react';
 import './App.css';
-import logo from './assets/clarity main logo.png';
-import NewsComponent from './newscomponent';
-import './newscard.css';
+import logo from './assets/WIUELogo.png';
+import Card from './card'
+import pancake from './pancake.png'
 
 function App() {
-  const [articles, setArticles] = useState([]);
+  const [status, setStatus] = useState('eating'); // Example status
 
   return (
     <>
       <div className='Head'>
         <img src={logo} alt="Logo" />
-      </div>
-      <NewsComponent setArticles={setArticles} />
-      <div className='newscards'>
-        {articles.map((article, index) => (
-          <div className='newscard' key={index}>
-            <img src={article.urlToImage} alt={article.title} />
-            <h1>{article.title}</h1>
-            <p>{article.transformedContent || article.description}</p>
+        <div className='status'>
+          <h1>Utkarsh is currently</h1>
+          <div className={`actualstatus ${status.includes('eating') ? 'eating' : ''}`}>
+            <h1>Eating...</h1>
+            <img src="https://media.forgecdn.net/avatars/thumbnails/432/988/256/256/637671187828924709_animated.gif" alt="Eating animation" />
           </div>
-        ))}
+        </div>
+      </div>
+
+      <div className='cards'>
+        <Card title="Chocolate Pancake" image={pancake} date="7/3/24 7:34 AM" description="yumms"/>
       </div>
     </>
   );
