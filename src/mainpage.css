@@ -1,0 +1,110 @@
+.app-container {
+    overflow-x: hidden;
+}
+
+.app-container .Head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 460px;
+}
+
+.app-container .status {
+    text-align: center;
+    margin-right: 20px;
+}
+
+.app-container .actualstatus {
+    border: 10px solid rgb(112, 245, 112);
+    border-radius: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: border 0.3s ease;
+}
+
+.app-container .actualstatus.eating {
+    animation: greenPulse 2s infinite;
+}
+
+.app-container .actualstatus img {
+    width: 100px;
+}
+
+@keyframes greenPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(112, 245, 112, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 20px 20px rgba(112, 245, 112, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(112, 245, 112, 0);
+    }
+}
+
+.app-container .cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.app-container .card {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: white;
+}
+
+.app-container .card-image {
+    width: 500px;
+    border-radius: 30px;
+    object-fit: contain;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    .app-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+
+    }
+
+    .app-container .Head {
+        flex-direction: column;
+        gap: 20px; 
+    }
+
+    .app-container .Head img {
+        width: 300px;
+    }
+
+    .app-container .actualstatus {
+        height: 150px;
+    }
+
+    .app-container .actualstatus img {
+        width: 80px;
+    }
+
+    .app-container .card {
+        width: 100%; 
+        margin: 10px auto;
+    }
+
+    .app-container .card-image {
+        width: 100%; 
+    }
+}
